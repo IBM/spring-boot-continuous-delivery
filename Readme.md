@@ -29,7 +29,7 @@ A Bluemix account is required to complete this lab.
 
 5. As soon as the "Create" button was pressed, Bluemix went to work deploying the application via the defined pipeline configurations. Click on the "Delivery Pipeline" box in the Toolchain to view the code deployment pipeline.
 
-<img src="media/DeliveryPipeline.png" width="100">
+<img src="media/DeliveryPipeline.png" width="200">
 ![Bluemix Tool Integrations](media/DeliveryPipeline.png)
 
 6. The pipeline page will dynamically update with the status of each step in the pipeline. When the deployment has finished running the bar on the top of the "Deploy Stage" will turn green.
