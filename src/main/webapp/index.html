@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Spring Boot Demo</title>
+</head>
+<body>
+    <h2>Hello from Bluemix!</h2>
+    <p>Enter someone's name and click submit to cheer for them!</p>
+    <label for="name">Name:</label>
+    <input type="text" name="name" id="cheerFor"><br><br>
+    <input type="button" onclick="cheers()" value="Submit">
+    <script language="javascript">
+        function cheers() {
+            window.location.href= "/cheer?name=" + document.getElementById('cheerFor').value;
+        }
+    </script>
+</body>
+</html>
