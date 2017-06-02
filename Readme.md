@@ -12,7 +12,7 @@ A Bluemix account is required to complete this lab.
 
 [![Deploy to Bluemix](https://github.com/IBM/container-journey-template/blob/master/images/button.png)](https://bluemix.net/deploy?repository=https://github.com/IBM/spring-boot-continuous-delivery)
 
-2. Once the Tool Integrations have loaded, click on each of the three different integrations to see what settings are available to be changed.
+2. Once the Tool Integrations have loaded, click on each of the three different integrations to see what settings are available to be changed. Note that the fields are automatically filled populated with data and no input should be required by the user unless changes to what was populated are desired.
 
 <img src="media/BluemixToolIntegrations.png" width="500">
 
