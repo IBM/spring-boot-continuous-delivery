@@ -8,5 +8,4 @@ applications:
   memory: 512M
   instances: 1
   domain: mybluemix.net
-#  disk_quota: 1024M
-#  host: '*'
+  disk_quota: 256M
