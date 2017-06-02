@@ -15,7 +15,6 @@ A Bluemix account is required to complete this lab.
 2. Once the Tool Integrations have loaded, click on each of the three different integrations to see what settings are available to be changed.
 
 <img src="media/BluemixToolIntegrations.png" width="500">
-![Bluemix Tool Integrations](media/BluemixToolIntegrations.png)
 
 3. Click the "Create" button in the bottom right area of the window to instruct Bluemix to create a toolchain for you using the defined settings.
 
