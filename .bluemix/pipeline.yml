@@ -34,7 +34,7 @@ stages:
     script: |-
       #!/bin/bash
       cd target
-      cf push "${CF_APP}" -p "springboot-greetings-demo.war"
+      cf push "${CF_APP}" -p "springboot-greetings-demo.war" -m 256M
       # View logs
       # cf logs "${CF_APP}" --recent
 hooks:
