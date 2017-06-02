@@ -1,0 +1,49 @@
+---
+name: "Deploy a simple spring boot application"
+description: "Toolchain to deploy a simple spring boot applicationto Bluemix"
+version: 0.1
+image: data:image/svg+xml;base64,$file(toolchain.svg,base64)
+#icon: data:image/svg+xml;base64,$file(icon.svg,base64)
+required:
+ - deploy
+
+# Github repos
+sample-repo:
+  service_id: githubpublic
+  parameters:
+    repo_name: "{{name}}"
+    repo_url: "https://github.com/IBM/spring-boot-continuous-delivery"
+    type: clone
+    has_issues: true
+
+# Pipelines
+sample-build:
+  service_id: pipeline
+  parameters:
+    name: "{{name}}"
+    configuration:
+      content: $file(pipeline.yml)
+      env:
+        REPO: "sample-repo"
+        SPACE_NAME: "{{deploy.parameters.selected-space}}"
+        CF_APP_NAME: "{{deploy.parameters.app-name}}"
+        ORG_NAME: "{{deploy.parameters.selected-organization}}"
+        REGION_ID: "{{deploy.parameters.selected-region}}"
+      execute: true
+    services: ["sample-repo"]
+  hidden: [form, description]
+
+#Web IDE
+webide:
+  service_id: orion
+
+#Deployment
+deploy:
+  schema:
+    $ref: deploy.json
+  service-category: pipeline
+  parameters:
+    app-name: "{{name}}"
+    selected-region: "{{region}}"
+    selected-organization: "{{organization}}"
+    selected-space: "{{space}}"

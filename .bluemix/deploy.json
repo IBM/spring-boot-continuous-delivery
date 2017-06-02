@@ -1,0 +1,64 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Sample Deploy Stage",
+    "description": "sample toolchain",
+    "longDescription": "The Delivery Pipeline automates continuous deployment.",
+    "type": "object",
+    "properties": {
+        "selected-region": {
+            "description": "The Bluemix region",
+            "type": "string"
+        },
+        "selected-organization": {
+            "description": "The Bluemix org",
+            "type": "string"
+        },
+        "selected-space": {
+            "description": "The Bluemix space",
+            "type": "string"
+        }
+    },
+    "required": ["selected-region", "selected-organization", "selected-space"],
+    "form": [
+        {
+            "type": "validator",
+            "url": "/devops/setup/bm-helper/helper.html"
+        },
+        {
+            "type": "table",
+            "columnCount": 3,
+            "widths": ["33%", "33%", "33%"],
+            "items": [
+                {
+                    "type": "label",
+                    "title": "Region"
+                },
+                {
+                    "type": "label",
+                    "title": "Organization"
+                },
+                {
+                    "type": "label",
+                    "title": "Space"
+                },
+                {
+                    "type": "select",
+                    "key": "selected-region"
+                },
+                {
+                    "type": "select",
+                    "key": "selected-organization"
+                },
+                {
+                    "type": "select",
+                    "key": "selected-space",
+                    "readonly": false
+                }
+            ]
+        },
+        {
+            "type": "label",
+            "title": "Please fill in the fields above."
+        }
+    ]
+}
