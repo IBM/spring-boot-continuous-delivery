@@ -6,6 +6,8 @@ The goal of this lab is to demonstrate deploying a simple web application to Blu
 
 A Bluemix account is required to complete this lab.
 
+To sign up for a new account visit ![Bluemix.net](https://console.ng.bluemix.net/)
+
 ## Steps
 
 1. Click the following Deploy to Bluemix button to load the initial toolchain setup:
@@ -54,7 +56,7 @@ File location: _/.bluemix/toolchain.yml_
 
 The toolchain.yml file is used to define the desired application name, integrated services, descriptions, environment properties, and more. This file is what pulls in the pipeline.yml, deploy.json, and custom Toolchain image used in this application.
 
-For our application we have integrated GitHub as a code repository as well as for issue tracking, Exclipse Orian Web IDE for editing code via the web interface, and a pipeline to deploy the application from the integrated GitHub repository.
+For our application we have integrated GitHub as a code repository as well as for issue tracking, Eclipse Orian Web IDE for editing code via the web interface, and a pipeline to deploy the application from the integrated GitHub repository.
 
 ## Deploy.json
 
