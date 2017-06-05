@@ -1,4 +1,4 @@
-# **WORK IN PROGRESS**: spring-boot-continuous-delivery
+# spring-boot-continuous-delivery
 
 The goal of this lab is to demonstrate deploying a simple web application to Bluemix.
 
