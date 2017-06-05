@@ -6,7 +6,7 @@ The goal of this lab is to demonstrate deploying a simple web application to Blu
 
 A Bluemix account is required to complete this lab.
 
-To sign up for a new account visit ![Bluemix.net](https://console.ng.bluemix.net/)
+To sign up for a new account visit [Bluemix.net](https://console.ng.bluemix.net/ "Welcome to Bluemix")
 
 ## Steps
 
