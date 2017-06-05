@@ -1,6 +1,6 @@
 # **WORK IN PROGRESS**: spring-boot-continuous-delivery
 
-The goal of this lab is to demonstrate deploying a simple web application to Bluemix as well as explain the different files used.
+The goal of this lab is to demonstrate deploying a simple web application to Bluemix.
 
 ## Prerequisite
 
@@ -42,5 +42,3 @@ In Progress                |  Finished
 
 <img src="media/DemoAppHomepage.png" width="500">
 
-------
-#
