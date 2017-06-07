@@ -34,10 +34,11 @@ stages:
     script: |-
       #!/bin/bash
       cd target
-      cf push "${CF_APP}-blue" -p "springboot-greetings-demo.war" -m 256M
+      cf push "${CF_APP}-blue" -n "${CF_APP}" -p "springboot-greetings-demo.war" -m 256M
       cf delete "${CF_APP}-green" -f
       cf rename "${CF_APP}-blue" "${CF_APP}-green"
-      cf push "${CF_APP}-blue" -p "springboot-greetings-demo.war" -m 256M
+      #Optionally, redeploy blue to be able to show they're both up and the green/blue process worked.
+      cf push "${CF_APP}-blue" -n "${CF_APP}" -p "springboot-greetings-demo.war" -m 256M
       cf apps | grep "${CF_APP}"
       # View logs
       # cf logs "${CF_APP}" --recent
