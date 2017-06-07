@@ -4,7 +4,7 @@ declared-services:
     label: cloudantNoSQLDB
     plan: Lite
 applications:
-- name: krook-springboot-greetings-demo
+- name: springboot-greetings-demo
   instances: 1
   path: ./target/springboot-greetings-demo.war
   buildpack: liberty-for-java
