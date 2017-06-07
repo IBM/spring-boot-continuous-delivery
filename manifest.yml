@@ -1,4 +1,8 @@
 ---
+declared-services:
+  sample-java-cloudant-cloudantNoSQLDB:
+    label: cloudantNoSQLDB
+    plan: Lite
 applications:
 - name: springboot-greetings-demo
   instances: 1
