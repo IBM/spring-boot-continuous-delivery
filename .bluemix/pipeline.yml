@@ -3,7 +3,7 @@ stages:
 - name: Build Stage
   inputs:
   - type: git
-    branch: add_data_service
+    branch: master
     service: ${REPO}
   triggers:
   - type: commit
