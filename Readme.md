@@ -36,7 +36,7 @@ To sign up for a new account visit [Bluemix.net](https://console.ng.bluemix.net/
 
 In Progress                |  Finished
 :-------------------------:|:-------------------------:
-![](media/PipelineInProgress.png)  |  ![](media/PipelineComplete.png)
+![](media/PipelineInProgress.png)  |  ![](media/PipelineFinished.png)
 
 8. Once the "Deploy Stage" has turned green, indicating the job is complete, the link to the deployed application can be found in the mid-section of the "Deploy Stage" card.
 
