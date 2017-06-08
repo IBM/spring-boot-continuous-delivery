@@ -44,7 +44,35 @@ In Progress                |  Finished
 
 9. Upon clicking the application's URL, a new tab will open to the application's main page.
 
-<img src="media/DemoAppHomepage.png" width="500">
+Create a New Account                |  Account Created
+:-------------------------:|:-------------------------:
+![](media/AccountImage1.png)  |  ![](media/AccountImage2.png)
+
+-----
+
+### The following steps will show how to access the account that was just created in the Cloudant database
+
+1. Return to Bluemix and open the Services Dashboard. Locate the hamburger menu at the top left of the page, select "Services", and then select "Dashboard".
+
+<img src="media/FindService2.png" width="200">
+
+2. Once on the Services Dashboard, locate your Cloudant DB and click on it to open the service description page.
+
+<img src="media/FindService3.png" width="700">
+
+3. Click on the "LAUNCH" button near the top right of the page to load into the Cloudant DB dashboard.
+
+4. Once the Cloudant dashboard has finished loading, select the databases tab on the left.
+
+<img src="media/OpenDB2.png" width="200">
+
+5. Click on the "Account" database. On the right you will see the account that was created from the web app above.
+
+<img src="media/DBEntry1.png" width="300">
+
+6. Click on the DB entry to view more details about the intry.
+
+<img src="media/DBEntry2.png" width="500">
 
 -----
 
