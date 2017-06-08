@@ -52,7 +52,7 @@ Create a New Account                |  Account Created
 
 ### The following steps will show how to access the account that was just created in the Cloudant database
 
-1. Return to Bluemix and open the Services Dashboard. Locate the hamburger menu at the top left of the page, select "Services", and then select "Dashboard".
+1. Return to [Bluemix](https://console.ng.bluemix.net/ "Welcome to Bluemix") and open the [Services Dashboard](https://console.ng.bluemix.net/dashboard).
 
 <img src="media/FindService2.png" width="200">
 
