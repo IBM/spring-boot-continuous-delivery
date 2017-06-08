@@ -1,8 +1,4 @@
 ---
-declared-services:
-  sample-java-cloudant-cloudantNoSQLDB:
-    label: cloudantNoSQLDB
-    plan: Lite
 applications:
 - name: springboot-greetings-demo
   instances: 1
@@ -11,3 +7,5 @@ applications:
   memory: 512M
   domain: mybluemix.net
   disk_quota: 256M
+  services:
+  - sample-java-cloudant-cloudantNoSQLDB
