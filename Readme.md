@@ -2,7 +2,7 @@
 
 The goal of this lab is to demonstrate deploying a simple Java web application to Bluemix with a DevOps pipeline for managing the application lifecycle.
 
-## Prerequisite
+## Prerequisites
 
 1. A Bluemix account is required to complete this lab.
 
