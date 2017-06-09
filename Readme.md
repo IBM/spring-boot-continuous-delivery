@@ -4,9 +4,13 @@ The goal of this lab is to demonstrate deploying a simple Java web application t
 
 ## Prerequisite
 
-A Bluemix account is required to complete this lab.
+1. A Bluemix account is required to complete this lab.
 
-To sign up for a new account visit [Bluemix.net](https://console.ng.bluemix.net/ "Welcome to Bluemix")
+    To sign up for a new account visit [Bluemix.net](https://console.ng.bluemix.net/ "Welcome to Bluemix")
+
+2. A Slack team is an **optional** requirement to complete this lab.
+
+    To sign up for a new team visit [slack.com](https://slack.com/)
 
 ## Steps
 
@@ -16,9 +20,17 @@ To sign up for a new account visit [Bluemix.net](https://console.ng.bluemix.net/
 
     [![Deploy to Bluemix](https://github.com/IBM/container-journey-template/blob/master/images/button.png)](https://bluemix.net/deploy?repository=https://github.com/IBM/spring-boot-continuous-delivery)
 
-3. Once the Tool Integrations have loaded, click on each of the three different integrations to see what settings are available to be changed. Note that the fields are automatically filled populated with data and no input should be required by the user unless changes to what was populated are desired.
+3. Once the Tool Integrations have loaded, click on each of the four different integrations to see what settings are available to be changed. 
+
+    **Note:** that the fields for GitHub, Eclipse Orion Web IDE, and Delivery Pipeline are automatically populated with data and no input should be required by the user unless changes to what was populated are desired.
 
     <img src="media/BluemixToolIntegrations.png" width="500">
+    
+    **Optional:** Slack Integration. Skip to Step 4 if you choose not to configure it. 
+    
+    Slack Integration allows your team to be notified of events occuring in your Delivery Pipeline. To configure this integration, create an incoming webhook for your Slack team using the [Slack API](https://api.slack.com/incoming-webhooks). Once created, fill in the three fields listed under the Slack Integration.
+    
+    <img src="media/BluemixSlackIntegration.png" width="500">
 
 4. Click the "Create" button in the bottom right area of the window to instruct Bluemix to create a toolchain for you using the defined settings.
 
