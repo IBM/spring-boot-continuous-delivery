@@ -33,11 +33,15 @@ sample-build:
     services: ["sample-repo"]
   hidden: [form, description]
 
-#Web IDE
+# Web IDE
 webide:
   service_id: orion
 
-#Deployment
+# Slack
+messaging:
+  service_id: slack
+
+# Deployment
 deploy:
   schema:
     $ref: deploy.json
