@@ -128,7 +128,7 @@ The pipeline.yml file is used to configure the Bluemix Pipeline for an applicati
 
 For our application we have configured the pipeline.yml to build our maven project to a custom location and then deploy the built .war file from the custom location. Additionally, in our pipeline.yml file we have specified the application memory limit using the `cf` command:
 
-```cf push "${CF_APP}" -p "springboot-greetings-demo.war" -m 256M```
+```cf push "${CF_APP}" -p "springboot-demo.war" -m 256M```
 
 -----
 
