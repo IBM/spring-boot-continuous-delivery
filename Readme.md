@@ -1,6 +1,6 @@
 # Spring Boot on Bluemix with IBM Continuous Delivery
 
-The goal of this lab is to demonstrate deploying a simple Java web application to Bluemix with a DevOps pipeline for managing the application lifecycle.
+The goal of this lab is to demonstrate deploying a simple Java web application to Bluemix with a DevOps pipeline for managing the application lifecycle. As part of this deployment, several actions are happening automatically through the use of configuration files found in the [.bluemix](.bluemix) folder. The two primary actions that are automatically configured to occur are deploying two different microservices from two different repositories and integrating multiple Bluemix services into the deployed applications. 
 
 ## Prerequisites
 
@@ -117,3 +117,13 @@ The pipeline.yml file is used to configure the Bluemix Pipeline for an applicati
 For our application we have configured the pipeline.yml to build our maven project to a custom location and then deploy the built .war file from the custom location. Additionally, in our pipeline.yml file we have specified the application memory limit using the `cf` command:
 
 ```cf push "${CF_APP}" -p "springboot-greetings-demo.war" -m 256M```
+
+-----
+
+## Associated Repositories
+
+One of the primary aspects of this lab is to demonstrate simplified deployment of microservices from multiple repositories. As part of the setup for the different microservices a unique deployment pipeline cis reated for and connected to each of the individual microservice's repositories. By creating a different pipeline for each repository we are enabling each service to have its code updated and re-deployed completely independent of the operation of the other microservice; that is to say, by having two pipelines we can update the code for one microservice and the other microservice will be completely unaffected and unaware anything happened.
+
+- Admin Dashboard Microservice: [https://github.com/IBM/spring-boot-continuous-delivery-admin](https://github.com/IBM/spring-boot-continuous-delivery-admin)
+
+   **Note:** No direct interaction with the associated repositories is required. All of the deployment interaction is done through the current repository.
