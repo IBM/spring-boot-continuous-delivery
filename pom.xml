@@ -42,7 +42,7 @@
 		</dependency>
 	</dependencies>
 	<build>
-		<finalName>springboot-greetings-demo</finalName>
+		<finalName>springboot-demo</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>

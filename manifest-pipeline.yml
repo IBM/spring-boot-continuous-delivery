@@ -1,8 +1,8 @@
 ---
 applications:
-- name: springboot-greetings-demo
+- name: springboot-demo
   instances: 1
-  path: ./target/springboot-greetings-demo.war
+  path: ./target/springboot-demo.war
   buildpack: liberty-for-java
   memory: 512M
   domain: mybluemix.net
