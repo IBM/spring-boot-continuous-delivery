@@ -1,6 +1,15 @@
 # Spring Boot on Bluemix with IBM Continuous Delivery
 
-The goal of this lab is to demonstrate deploying a simple Java web application to Bluemix with a DevOps pipeline for managing the application lifecycle. As part of this deployment, several actions are happening automatically through the use of configuration files found in the [.bluemix](.bluemix) folder. The two primary actions that are automatically configured to occur are deploying two different microservices from two different repositories and integrating multiple Bluemix services into the deployed applications. 
+The goal of this lab is to demonstrate deploying a simple Java web application to Bluemix with a DevOps pipeline for managing the application lifecycle. 
+
+As part of this deployment, several actions are happening automatically through the use of configuration files found in the [.bluemix](.bluemix) folder. The two primary actions that are automatically configured to occur are deploying two different microservices from two different repositories and integrating multiple Bluemix services into the deployed applications. 
+
+## Table of Contents
+
+- [Prerequisites](https://github.com/IBM/spring-boot-continuous-delivery/blob/master/Readme.md#prerequisites)
+- [Steps](https://github.com/IBM/spring-boot-continuous-delivery/blob/master/Readme.md#steps)
+- [Access Cloudant DB service](https://github.com/IBM/spring-boot-continuous-delivery/blob/master/Readme.md#cloudant-db)
+- [Associated Repositories](https://github.com/IBM/spring-boot-continuous-delivery/blob/master/Readme.md#associated-repositories)
 
 ## Prerequisites
 
@@ -62,7 +71,9 @@ Create a New Account                |  Account Created
 
 -----
 
-### The following steps will show how to access the account that was just created in the Cloudant DB database
+## Cloudant DB
+
+The following steps will show how to access the account that was just created in the Cloudant DB database
 
 1. Return to [Bluemix](https://console.ng.bluemix.net/ "Welcome to Bluemix") and open the [Services Dashboard](https://console.ng.bluemix.net/dashboard).
 
