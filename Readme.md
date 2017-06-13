@@ -9,6 +9,7 @@ As part of this deployment, several actions are happening automatically through 
 - [Prerequisites](https://github.com/IBM/spring-boot-continuous-delivery/blob/master/Readme.md#prerequisites)
 - [Steps](https://github.com/IBM/spring-boot-continuous-delivery/blob/master/Readme.md#steps)
 - [Access Cloudant DB service](https://github.com/IBM/spring-boot-continuous-delivery/blob/master/Readme.md#cloudant-db)
+- [Deployment Configuration](https://github.com/IBM/spring-boot-continuous-delivery/blob/master/Readme.md#deployment-configuration)
 - [Associated Repositories](https://github.com/IBM/spring-boot-continuous-delivery/blob/master/Readme.md#associated-repositories)
 
 ## Prerequisites
@@ -99,7 +100,7 @@ The following steps will show how to access the account that was just created in
 
 -----
 
-# Deployment Files
+# Deployment Configuration
 
 In this application we use several different files that each server an important part of customizing our Bluemix deployment. Below we will give a brief overview of each file's function.
 
