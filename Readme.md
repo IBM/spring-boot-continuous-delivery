@@ -174,6 +174,8 @@ Easily scan your web application for security vulnerabilites using the [Applicat
 7. You will then be asked for a site URL. Enter you Bluemix application URL and click **Continue**.
     
     <img src="media/AppSecurityURL.png" width="700">
+    
+    **Note**: You may be required to add a verification file to ensure your application URL is valid. If this occurs, place the `IBMDomainVerification.html` file in the `src/main/webapp/` directory of your cloned repo. Wait for the application to redeploy before scanning.
 
 8. The next screen will contain various scan settings, leave these set to the defaults. Click **Scan**.
     
