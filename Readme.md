@@ -7,8 +7,10 @@ As part of this deployment, several actions are happening automatically through 
 ## Table of Contents
 
 - [Prerequisites](https://github.com/IBM/spring-boot-continuous-delivery/blob/master/Readme.md#prerequisites)
-- [Steps](https://github.com/IBM/spring-boot-continuous-delivery/blob/master/Readme.md#steps)
+- [Deployment Steps](https://github.com/IBM/spring-boot-continuous-delivery/blob/master/Readme.md#deployment-steps)
+  - [Admin Dashboard Microservice](https://github.com/IBM/spring-boot-continuous-delivery/blob/master/Readme.md#admin-dashboard-microservice)
 - [Access Cloudant DB service](https://github.com/IBM/spring-boot-continuous-delivery/blob/master/Readme.md#cloudant-db)
+- [Updating Individual Microservices](https://github.com/IBM/spring-boot-continuous-delivery/blob/master/Readme.md#updating-individual-microservices)
 - [Deployment Configuration](https://github.com/IBM/spring-boot-continuous-delivery/blob/master/Readme.md#deployment-configuration)
 - [Associated Repositories](https://github.com/IBM/spring-boot-continuous-delivery/blob/master/Readme.md#associated-repositories)
 - [Security Vulnerability Scanning](https://github.com/IBM/spring-boot-continuous-delivery/blob/master/Readme.md#security-vulnerability-scanning)
@@ -23,7 +25,7 @@ As part of this deployment, several actions are happening automatically through 
 
     To sign up for a new team visit [slack.com](https://slack.com/)
 
-## Steps
+## Deployment Steps
 
 1. Log into the [Bluemix console](https://console.ng.bluemix.net/) and create a [Cloudant instance](https://console.ng.bluemix.net/catalog/services/cloudant-nosql-db/?taxonomyNavigation=services) named `sample-java-cloudant-cloudantNoSQLDB`.
 
@@ -35,7 +37,7 @@ As part of this deployment, several actions are happening automatically through 
 
     **Note:** that the fields for GitHub, Eclipse Orion Web IDE, and Delivery Pipeline are automatically populated with data and no input should be required by the user unless changes to what was populated are desired.
 
-    <img src="media/BluemixToolIntegrations.png" width="500">
+    <img src="media/ToolIntegrations.png" width="500">
     
     **Optional:** Slack Integration. Skip to Step 4 if you choose not to configure it. 
     
@@ -49,9 +51,11 @@ As part of this deployment, several actions are happening automatically through 
 
 5. The page that loads after clicking create is the application's Toolchain. Here is the overview of all of the integrated services, the flow of the project, and easy navigation to each of the individual components of the application.
 
-    <img src="media/BluemixToolchainView.png" width="500">
+    <img src="media/MicroservicesToolchain.png" width="500">
 
-6. As soon as the "Create" button was pressed, Bluemix went to work deploying the application via the defined pipeline configurations. Click on the "Delivery Pipeline" box in the Toolchain to view the code deployment pipeline.
+   **Note:** In this view, Slack was not configured in the previous step before clicking "Create". Slack can be configured at any time after creation of the Toolchain.
+
+6. As soon as the "Create" button was pressed, Bluemix went to work deploying the application via the defined pipeline configurations. Click on the "Delivery Pipeline" box that starts with the words "spring-boot-continuous..." (shown below) in the Toolchain to view the code deployment pipeline of our primary application.
 
     <img src="media/DeliveryPipeline.png" width="200">
 
@@ -70,6 +74,22 @@ In Progress                |  Finished
 Create a New Account                |  Account Created
 :-------------------------:|:-------------------------:
 ![](media/AccountImage1.png)  |  ![](media/AccountImage2.png)
+
+### Admin Dashboard Microservice
+
+10. Return to the Toolchain page and click on the other pipeline that has not yet been viewed ("admin-spring-boot...").
+
+    <img src="media/AdminPipeline.png" width="200">
+    
+11. Once the pipeline page has loaded a similar set of deployment steps to our primary microservice can be found. Once the deployment has completed, click on the url listed in the middle of the "Deploy Stage" card. The URL will look similar to the one shown below.
+
+    <img src="media/adminUrlExample.png" width="500">
+
+12. After the application's webpage has loaded a simulated admin dashboard will show the names and account ids created from the other microservice's webpage. The admin and main application are both communicating with the same Cloudant DB instance in the backend but have no direct communication between each other.
+
+Full Account List                |  Searching Accounts
+:-------------------------:|:-------------------------:
+![](media/AdminApp1.png)  |  ![](media/AdminApp2.png)
 
 -----
 
@@ -98,6 +118,59 @@ The following steps will show how to access the account that was just created in
 6. Click on the database entry to view more details.
 
     <img src="media/DBEntry2.png" width="500">
+    
+# Updating Individual Microservices
+
+One of the great things about how Toolchains can be configured is that it can have multiple stand alone pipelines and code repositories. The way this Toolchain has been configured sets up two independent GitHub repositories and then two independent delivery pipelines. What that means is if you commit a change to one repository it will deploy that change automatically into its associated pipeline but the other repository and pipeline will be completely unaffected.
+
+To demonstrate this, choose either of the two GitHub repositories to edit. For our demonstration, we are going to edit the main application's code. For simplicity, we're going to edit the `index.jps` file via the GitHub web interface.
+
+1. Navigate to your cloned version of the project on [GitHub.com](https://github.com).
+
+    <img src="media/ClonedRepo.png" width="500">
+
+2. Navigate to the `index.jsp` file: src -> main -> webapp -> index.jsp
+
+    ```https://github.com/[username]/spring-boot-continuous-delivery-123456/blob/master/src/main/webapp/index.jsp```
+    
+    **Note:** The above example URL will be different depending on your GitHub username and the string of numbers assigned to your cloned version of the application.
+    
+3. Open the index.jsp file for editing:
+
+    <img src="media/EditIndex.png" width="300">
+    
+4. Change the application's header to "Create a new account. Edited!". See the following for reference:
+
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create a new account. Edited!</title>
+</head>
+<body>
+    <h2>Create a new account</h2>
+    <p>Enter your name and click submit to open a new account.</p>
+    <form method="post" action="/account">
+	    <label for="name">Name:</label>
+	    <input type="text" name="name" id="name"><br><br>
+	    <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
+```
+
+5. Save and commit the change to your index.jsp
+
+    <img src="media/CommitFile.png" width="300">
+    
+6. Return to your deployment pipelines to view the deployment progress. The application may deploy quickly, if it is done deploying before you can navigate back to it you can view recent deployment logs to verify that only the primary application was deployed with the recent commit. Click [here](https://console.ng.bluemix.net/devops/toolchains/) to navigate back to the Toolchain overview dashboard.
+
+    <img src="media/OtherPipelineUnaffected.png" width="1000">
+    
+7. Finally, open the primary application's webpage again to view the recently committed change.
+
+    <img src="media/WebpageEdited.png" width="500">
 
 -----
 
