@@ -11,6 +11,7 @@ As part of this deployment, several actions are happening automatically through 
 - [Access Cloudant DB service](https://github.com/IBM/spring-boot-continuous-delivery/blob/master/Readme.md#cloudant-db)
 - [Deployment Configuration](https://github.com/IBM/spring-boot-continuous-delivery/blob/master/Readme.md#deployment-configuration)
 - [Associated Repositories](https://github.com/IBM/spring-boot-continuous-delivery/blob/master/Readme.md#associated-repositories)
+- [Security Vulnerability Scanning](https://github.com/IBM/spring-boot-continuous-delivery/blob/master/Readme.md#security-vulnerability-scanning)
 
 ## Prerequisites
 
@@ -139,3 +140,56 @@ One of the primary aspects of this lab is to demonstrate simplified deployment o
 - Admin Dashboard Microservice: [https://github.com/IBM/spring-boot-continuous-delivery-admin](https://github.com/IBM/spring-boot-continuous-delivery-admin)
 
    **Note:** No direct interaction with the associated repositories is required. All of the deployment interaction is done through the current repository.
+   
+-----
+
+# Security Vulnerability Scanning
+
+Easily scan your web application for security vulnerabilites using the [Application Security on Cloud](https://console.ng.bluemix.net/catalog/services/application-security-on-cloud) service on Bluemix.
+
+1. From the Bluemix Catalog click **Security** from the left-side menu, or simply search for **Application Security on Cloud** in the search prompt.
+
+    <img src="media/BluemixSecurityServices.png">
+    
+2. Click on the **Application Security on Cloud** service.
+    
+    <img src="media/AppSecurityOnCloud.png">
+
+3. Choose a service name, or keep the pre-populated name. Click **Create**.
+    
+    <img src="media/AppSecurityCreate.png" width="700">
+
+4. You will see three application options for scanning. Click **Web**.
+    
+    <img src="media/AppSecurityWebScan.png" width="700">
+
+5. The next screen will ask you to choose a scan type. Click **Dynamic**.
+    
+    <img src="media/AppSecurityScanType.png" width="700">
+
+6. For site location choose **Public Network**.
+    
+    <img src="media/AppSecurityNetwork.png" width="700">
+
+7. You will then be asked for a site URL. Enter you Bluemix application URL and click **Continue**.
+    
+    <img src="media/AppSecurityURL.png" width="700">
+    
+    **Note**: You may be required to add a verification file to ensure your application URL is valid. If this occurs, place the `IBMDomainVerification.html` file in the `src/main/webapp/` directory of your cloned repo. Wait for the application to redeploy before scanning.
+
+8. The next screen will contain various scan settings, leave these set to the defaults. Click **Scan**.
+    
+    <img src="media/AppSecurityScanSettings.png" width="700">
+    
+    Your security vulnerability scan will start running.
+    
+    <img src="media/AppSecurityScanInProgress.png" width="700">
+    
+    Once the scan is complete you will see the total number of vulnerabitites and the associated severity ratings.
+    
+    <img src="media/AppSecurityResults.png" width="700">
+
+9. You can choose to download the detailed security report, and work to remediate the issues found.
+    
+    <img src="media/AppSecurityReport.png" width="700">
+
