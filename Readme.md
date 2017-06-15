@@ -11,6 +11,7 @@ As part of this deployment, several actions are happening automatically through 
 - [Access Cloudant DB service](https://github.com/IBM/spring-boot-continuous-delivery/blob/master/Readme.md#cloudant-db)
 - [Deployment Configuration](https://github.com/IBM/spring-boot-continuous-delivery/blob/master/Readme.md#deployment-configuration)
 - [Associated Repositories](https://github.com/IBM/spring-boot-continuous-delivery/blob/master/Readme.md#associated-repositories)
+- [Security Vulnerability Scanning](https://github.com/IBM/spring-boot-continuous-delivery/blob/master/Readme.md#security-vulnerability-scanning)
 
 ## Prerequisites
 
@@ -139,3 +140,43 @@ One of the primary aspects of this lab is to demonstrate simplified deployment o
 - Admin Dashboard Microservice: [https://github.com/IBM/spring-boot-continuous-delivery-admin](https://github.com/IBM/spring-boot-continuous-delivery-admin)
 
    **Note:** No direct interaction with the associated repositories is required. All of the deployment interaction is done through the current repository.
+   
+-----
+
+# Security Vulnerability Scanning
+
+Easily scan your web application for security vulnerabilites using the **Application Security on Cloud** service on Bluemix.
+
+1. From the Bluemix Catalog click **Security** from the left-side menu, or simply search for **Application Security on Cloud** in the search prompt.
+    <Photo>
+    
+2. Click on the **Application Security on Cloud** service.
+    <Photo>
+
+3. Choose a service name, or keep the pre-populated name. Click **Create**.
+    <Photo>
+
+4. You will see three application options for scanning. Click **Web**.
+    <Photo>
+
+5. The next screen will ask you to choose a scan type. Click **Dynamic**.
+    <Photo>
+
+6. For site location choose **Public Network**.
+    <Photo>
+
+7. You will then be asked for site URL. Enter you bluemix application URL and click **Continue**.
+    <Photo>
+
+8. The next screen will contain various scan settings, leave these set to the defaults. Click **Scan**.
+    <Photo>
+    
+    Your security vulnerability scan will start running.
+    <Photo>
+    
+    Once the scan is complete you will see the total number of vulnerabitites and the associated severity ratings.
+    <Photo>
+
+9. You can choose to download the detailed security report, and work to remediate the issues found.
+    <Photo>
+
