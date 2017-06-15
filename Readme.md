@@ -188,5 +188,6 @@ Easily scan your web application for security vulnerabilites using the [Applicat
     <img src="media/AppSecurityResults.png" width="700">
 
 9. You can choose to download the detailed security report, and work to remediate the issues found.
-    <Photo>
+    
+    <img src="media/AppSecurityReport.png" width="700">
 
