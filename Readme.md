@@ -145,37 +145,47 @@ One of the primary aspects of this lab is to demonstrate simplified deployment o
 
 # Security Vulnerability Scanning
 
-Easily scan your web application for security vulnerabilites using the **Application Security on Cloud** service on Bluemix.
+Easily scan your web application for security vulnerabilites using the [Application Security on Cloud](https://console.ng.bluemix.net/catalog/services/application-security-on-cloud) service on Bluemix.
 
 1. From the Bluemix Catalog click **Security** from the left-side menu, or simply search for **Application Security on Cloud** in the search prompt.
-    <Photo>
+
+    <img src="media/BluemixSecurityServices.png">
     
 2. Click on the **Application Security on Cloud** service.
-    <Photo>
+    
+    <img src="media/AppSecurityOnCloud.png">
 
 3. Choose a service name, or keep the pre-populated name. Click **Create**.
-    <Photo>
+    
+    <img src="media/AppSecurityCreate.png" width="700">
 
 4. You will see three application options for scanning. Click **Web**.
-    <Photo>
+    
+    <img src="media/AppSecurityWebScan.png" width="700">
 
 5. The next screen will ask you to choose a scan type. Click **Dynamic**.
-    <Photo>
+    
+    <img src="media/AppSecurityScanType.png" width="700">
 
 6. For site location choose **Public Network**.
-    <Photo>
+    
+    <img src="media/AppSecurityNetwork.png" width="700">
 
 7. You will then be asked for site URL. Enter you bluemix application URL and click **Continue**.
-    <Photo>
+    
+    <img src="media/AppSecurityURL.png" width="700">
 
 8. The next screen will contain various scan settings, leave these set to the defaults. Click **Scan**.
-    <Photo>
+    
+    <img src="media/AppSecurityScanSettings.png" width="700">
     
     Your security vulnerability scan will start running.
-    <Photo>
+    
+    <img src="media/AppSecurityScanInProgress.png" width="700">
     
     Once the scan is complete you will see the total number of vulnerabitites and the associated severity ratings.
-    <Photo>
+    
+    <img src="media/AppSecurityResults.png" width="700">
 
 9. You can choose to download the detailed security report, and work to remediate the issues found.
     <Photo>
