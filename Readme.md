@@ -171,7 +171,7 @@ Easily scan your web application for security vulnerabilites using the [Applicat
     
     <img src="media/AppSecurityNetwork.png" width="700">
 
-7. You will then be asked for site URL. Enter you bluemix application URL and click **Continue**.
+7. You will then be asked for a site URL. Enter you Bluemix application URL and click **Continue**.
     
     <img src="media/AppSecurityURL.png" width="700">
 
