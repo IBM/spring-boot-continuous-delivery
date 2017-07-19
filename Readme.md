@@ -6,15 +6,15 @@ As part of this deployment, several actions are happening automatically through 
 
 ## Table of Contents
 
-- [Prerequisites](https://github.com/IBM/spring-boot-continuous-delivery/blob/master/Readme.md#prerequisites)
-- [Deployment Steps](https://github.com/IBM/spring-boot-continuous-delivery/blob/master/Readme.md#deployment-steps)
-  - [Admin Dashboard Microservice](https://github.com/IBM/spring-boot-continuous-delivery/blob/master/Readme.md#admin-dashboard-microservice)
-- [Access Cloudant DB service](https://github.com/IBM/spring-boot-continuous-delivery/blob/master/Readme.md#cloudant-db)
-- [Updating Individual Microservices](https://github.com/IBM/spring-boot-continuous-delivery/blob/master/Readme.md#updating-individual-microservices)
-- [Deployment Configuration](https://github.com/IBM/spring-boot-continuous-delivery/blob/master/Readme.md#deployment-configuration)
-- [Associated Repositories](https://github.com/IBM/spring-boot-continuous-delivery/blob/master/Readme.md#associated-repositories)
-- [Security Vulnerability Scanning](https://github.com/IBM/spring-boot-continuous-delivery/blob/master/Readme.md#security-vulnerability-scanning)
-- [Deploying To Kubernetes](https://github.com/IBM/spring-boot-continuous-delivery/blob/master/Readme.md#deploying-to-kubernetes)
+- [Prerequisites](#prerequisites)
+- [Deployment Steps](#deployment-steps)
+  - [Admin Dashboard Microservice](#admin-dashboard-microservice)
+- [Access Cloudant DB service](#cloudant-db)
+- [Updating Individual Microservices](#updating-individual-microservices)
+- [Deployment Configuration](#deployment-configuration)
+- [Associated Repositories](#associated-repositories)
+- [Security Vulnerability Scanning](#security-vulnerability-scanning)
+- [Deploying To Kubernetes](#deploying-to-kubernetes)
 
 ## Prerequisites
 
