@@ -14,6 +14,7 @@ As part of this deployment, several actions are happening automatically through 
 - [Deployment Configuration](https://github.com/IBM/spring-boot-continuous-delivery/blob/master/Readme.md#deployment-configuration)
 - [Associated Repositories](https://github.com/IBM/spring-boot-continuous-delivery/blob/master/Readme.md#associated-repositories)
 - [Security Vulnerability Scanning](https://github.com/IBM/spring-boot-continuous-delivery/blob/master/Readme.md#security-vulnerability-scanning)
+- [Deploying To Kubernetes](https://github.com/IBM/spring-boot-continuous-delivery/blob/master/Readme.md#deploying-to-kubernetes)
 
 ## Prerequisites
 
@@ -266,3 +267,66 @@ Easily scan your web application for security vulnerabilites using the [Applicat
     
     <img src="media/AppSecurityReport.png" width="700">
 
+-----
+
+# Deploying to Kubernetes
+One deployment option is to deploy this application to kubernetes. For this option, we will provision a lite kubernetes cluster via the IBM Bluemix Container Service and deploy the service using the [manifests/deployment.yaml](/manifests/deployment.yaml) file.
+
+#### Provision and configure IBM Bluemix Container Service
+1) Log into the [Bluemix console](https://console.ng.bluemix.net/) and create a lite [Kubernetes cluster](https://console.bluemix.net/containers-kubernetes/launch) named "mycluster". This will take several minutes to provision. 
+2. Create a Cloudant instance (if you haven't already) named sample-java-cloudant-cloudantNoSQLDB
+3. Install [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/). Kubectl is the standard way to interact with Kubernetes clusters. You will configure kubectl to point to your Kubernetes cluster hosted on the IBM Bluemix Container Service
+3. Download the [IBM Bluemix CLI](https://console.bluemix.net/docs/cli/reference/bluemix_cli/index.html#install_bluemix_cli)
+3. Make sure you login, then install the IBM Bluemix Container Service plug-in.
+```sh
+bx login # -sso if using single sign on
+bx plugin install container-service -r Bluemix
+bx plugin list # To verifiy the plugin has been installed
+bx cs init # Initialize the container service plugin
+```
+6. List the clusters. You should see the cluster you created: "mycluster". If you don't, make sure you have waited enough time for the cluster to be provisioned. You should see the cluster state as "Ready" in the bluemix console.
+```sh
+bx cs clusters
+```
+7. Configure your kubectl to point to your kubernetes cluster.
+```sh
+bx cs cluster-config mycluster
+```
+This should give you an `export KUBE_CONFIG` line. Copy and paste this to configure your kubectl to point to your kubernetes cluster.
+For example:
+```
+export KUBECONFIG=/Users/johnzaccone/.bluemix/plugins/container-service/clusters/mycluster/kube-config-par01-mycluster.yml
+```
+8. Verify that your kubectl is configured. The following should show: "mycluster".
+```sh
+kubectl config get-clusters
+```
+You can now send commands to your Kubernetes cluster!
+
+#### Bind the Cloudant Service
+We will use the bluemix CLI to create a binding between our cloudant instance and our Kubernetes cluster.
+1. List the services
+```sh
+bx service list
+```
+2. Bind the Cloudant service.
+```sh
+bx cs cluster-service-bind mycluster default sample-java-cloudant-cloudantNoSQLDB
+```
+The command above loads a Kubernetes secret into your cluster that contains information to connect to your Cloudant instance. The application is configured to read this secret when it is deployed.
+
+#### Deploy the Application
+The [manifests/deployment.yml](manifests/deployment.yml) contains the Kubernetes defition to deploy the application. Deploy the application:
+```sh
+kubectl apply -f manifests
+```
+#### Test the Application
+The deployment uses NodePort to expose the application on all nodes in the cluster. To access the application, first get IP of the worker node in the cluster.
+```sh
+kubectl get nodes
+```
+Then lists the services to get the port for your application
+```sh
+kubectl get services
+NAME                  CLUSTER-IP     EXTERNAL-IP   PORT(S)          AGE
+spring-boot-service   10.10.10.177   <nodes>       9080:30052/TCP   20min
