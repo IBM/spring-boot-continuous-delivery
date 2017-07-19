@@ -7,7 +7,7 @@
 </head>
 <body>
 	<h2>Account created</h2>
-    <p>Your new account number for <b>${name}</b> is <b>${id}</b>.</p>
-    <p>Create <a href="/">another account</a>.</p>
+    <p>Your new account number for <b>${name}</b> is <b>${id}</b>.</p>    
+    <p>Create <a href="${pageContext.request.contextPath}">another account</a>.</p>
 </body>
 </html>

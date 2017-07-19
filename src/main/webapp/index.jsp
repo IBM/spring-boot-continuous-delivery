@@ -6,8 +6,8 @@
 </head>
 <body>
     <h2>Create a new account</h2>
-    <p>Enter your name and click submit to open a new account.</p>
-    <form method="post" action="/account">
+    <p>Enter your name and click submit to open a new account.</p>    
+    <form method="post" action="${pageContext.request.contextPath}/account">
 	    <label for="name">Name:</label>
 	    <input type="text" name="name" id="name"><br><br>
 	    <input type="submit" value="Submit">
